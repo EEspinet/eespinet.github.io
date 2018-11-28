@@ -1,12 +1,24 @@
-{% extends 'base.html' %}
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../static/css/styles.css">-->
 
-{% block app_content %}
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymleaf.org">
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+	<link th:href="@{/css/styles.css}" rel="stylesheet" type="text/css">
+	<title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">CPS Home</title>
+</head>
 <body>
 	<nav class="navbar navbar-inverse navbar-static-top">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" th:href="@{/}">
-                    <img th:src="@{/../static/img/fiu.jpg}" alt="fiu logo" style="width:100%;height:100%;"/>
+                    <img th:src="@{/img/fiu.jpg}" alt="fiu logo" style="width:100%;height:100%;"/>
                 </a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
@@ -24,8 +36,28 @@
             </div>
         </div>
     </nav>
-    
-    	<p><a href="/" th:href="@{/api/info}">Back to home page</a></p>
+	    
+    <footer class="py-5 bg-dark">
+        <div>
+            <p align="center">
+                <a style="color: whitesmoke;" href="http://www.jpmorganchase.com" target="_blank">JPMorgan Chase & Co. |</a>
+                <a style="color: whitesmoke;" href="http://jpmorgan.com" target="_blank"> JPMorgan |</a>
+                <a style="color: whitesmoke;" href="http://chase.com" target="_blank"> Chase |</a>
+                <a style="color: whitesmoke;" href=:"https://portal.jpmchase.net/sites/companyhome/Pages/help.aspx" target="_blank"> Help |</a>
+                <a style="color: whitesmoke;" href="mailto:customerSupport@JaneDoePizzeria.com?Subject=Contacting%20from%20Firmwide"> Contact Us</a>
+            </p>
+            <p align="center" style="color: whitesmoke;">
+                <small>
+                    Copyright @
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script> Jane Doe Pizzeria. All rights reserved.
+                </small>
+            </p>
+        </div>
+    </footer>
 
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
 </body>
-{% endblock %}
+</html>
